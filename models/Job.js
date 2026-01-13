@@ -1,24 +1,22 @@
 import mongoose from "mongoose";
 
-const JobSchema = new mongoose.Schema({
-  company: {
-    type: String,
-    required: true,
+const JobSchema = new mongoose.Schema(
+  {
+    company: String,
+    role: String,
+    status: {
+      type: String,
+      default: "Applied",
+    },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
-  role: {
-    type: String,
-    required: true,
-  },
-  status: {
-    type: String,
-    enum: ["Applied", "Interview", "Offer", "Rejected"],
-    default: "Applied",
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  { timestamps: true }
+);
 
 export default mongoose.models.Job || mongoose.model("Job", JobSchema);
+
 
