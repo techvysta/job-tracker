@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+📌 Job Application Tracker
 
-## Getting Started
+A full-stack Job Application Tracker built with Next.js, MongoDB, and NextAuth that allows users to securely manage their job applications.
 
-First, run the development server:
+Each user can register, log in, and track only their own jobs, making the app multi-user and production-ready.
 
-```bash
+🚀 Features
+
+🔐 Authentication
+
+User registration & login
+
+Secure sessions using NextAuth (Credentials Provider)
+
+Protected dashboard routes
+
+Logout functionality
+
+🗂 Job Management (CRUD)
+
+Add new job applications
+
+View job list
+
+Update job status
+
+Delete job applications
+
+👤 User-Specific Data
+
+Jobs are linked to the logged-in user
+
+Users can only access their own data
+
+🎨 User Experience
+
+Loading states
+
+Empty state messages
+
+Disabled buttons during form submission
+
+Clean and responsive UI
+
+🛠 Tech Stack
+
+Frontend
+
+Next.js (App Router)
+
+React
+
+Tailwind CSS
+
+Backend
+
+Next.js API Routes
+
+MongoDB (Mongoose)
+
+Authentication
+
+NextAuth.js
+
+Credentials Provider
+
+bcrypt for password hashing
+
+📂 Project Structure
+app/
+├── api/
+│   ├── auth/[...nextauth]/route.js
+│   ├── jobs/
+│   │   ├── route.js
+│   │   └── [id]/route.js
+│   └── register/route.js
+│
+├── dashboard/
+│   ├── page.js
+│   └── DashboardClient.js
+│
+├── login/page.js
+├── register/page.js
+│
+├── layout.js
+├── page.js
+└── globals.css
+
+🔐 Authentication Flow
+
+User registers on /register
+
+Password is hashed and stored securely in MongoDB
+
+User logs in via /login
+
+Session is created using NextAuth
+
+/dashboard is protected and accessible only to authenticated users
+
+⚙️ Environment Variables
+
+Create a .env.local file in the root directory:
+
+MONGODB_URI=your_mongodb_connection_string
+NEXTAUTH_SECRET=your_random_secret
+NEXTAUTH_URL=http://localhost:3000
+
+▶️ Run Locally
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+🌱 Future Improvements
 
-To learn more about Next.js, take a look at the following resources:
+Edit job details
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Job search & filters
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pagination
 
-## Deploy on Vercel
+Dark mode
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deployment to Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📖 What I Learned
+
+Implementing authentication with NextAuth
+
+Secure password handling using bcrypt
+
+Protecting routes in Next.js App Router
+
+Building REST APIs with Next.js
+
+Structuring a real-world full-stack application
+
+Managing user-scoped data securely
+
+👩‍💻 Author
+
+Sumedha Baranwal
+
+GitHub: https://github.com/techvysta
+
+Role: Frontend / Full-Stack Developer
+
+⭐ If you like this project
+
+Give it a ⭐ on GitHub — it helps a lot!
